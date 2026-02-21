@@ -188,8 +188,12 @@ Letter.prototype.step = function () {
       }
     } else if (this.circleFading) {
       ctx.fillStyle = this.lightColor.replace("light", 70);
-      ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
+      // ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
+ctx.lineWidth = 4;
+ctx.strokeStyle = "#000";   // black outline for contrast
+ctx.strokeText(this.char, this.x + this.dx, this.y + this.dy);
 
+ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
       ++this.tick2;
       var proportion = this.tick2 / this.circleFadeTime,
         armonic = -Math.cos(proportion * Math.PI) / 2 + 0.5;
@@ -204,7 +208,12 @@ Letter.prototype.step = function () {
       if (this.tick2 >= this.circleFadeTime) this.circleFading = false;
     } else {
       ctx.fillStyle = this.lightColor.replace("light", 70);
-      ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
+      // ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
+      ctx.lineWidth = 4;
+ctx.strokeStyle = "#000";   // black outline for contrast
+ctx.strokeText(this.char, this.x + this.dx, this.y + this.dy);
+
+ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
     }
 
     for (var i = 0; i < this.shards.length; ++i) {
@@ -243,7 +252,12 @@ Letter.prototype.step = function () {
     if (this.spawning) {
       ++this.tick;
       ctx.fillStyle = this.lightColor.replace("light", 70);
-      ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
+      // ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
+      ctx.lineWidth = 4;
+ctx.strokeStyle = "#000";   // black outline for contrast
+ctx.strokeText(this.char, this.x + this.dx, this.y + this.dy);
+
+ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
 
       if (this.tick >= this.spawnTime) {
         this.tick = 0;
@@ -268,7 +282,12 @@ Letter.prototype.step = function () {
       ctx.stroke();
 
       ctx.fillStyle = this.lightColor.replace("light", 70);
-      ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
+      // ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
+      ctx.lineWidth = 4;
+ctx.strokeStyle = "#000";   // black outline for contrast
+ctx.strokeText(this.char, this.x + this.dx, this.y + this.dy);
+
+ctx.fillText(this.char, this.x + this.dx, this.y + this.dy);
 
       if (this.tick >= this.inflateTime) {
         this.tick = 0;
